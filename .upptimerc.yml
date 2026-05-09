@@ -11,7 +11,7 @@ sites:
     icon: https://www.bislamic.com/cdn/shop/files/bi-logo-512x512-black-BGwhite-radius-115.png
     maxResponseTime: 3000
 
-  - name: Bislamic Deen (Blog)
+  - name: Bislamic Deen
     url: https://deen.bislamic.com
     icon: https://deen.bislamic.com/content/images/size/w256h256/2025/05/bi-logo-1024x1024-black-50--BGwhite-circle.png
     maxResponseTime: 3000
