@@ -1,5 +1,5 @@
 owner: bislamic
-repo: status
+repo: upptime
 token: ${{ secrets.GH_PAT }}
 
 sites:
