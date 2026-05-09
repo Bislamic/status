@@ -1,37 +1,66 @@
 owner: bislamic
 repo: upptime
 token: ${{ secrets.GH_PAT }}
+user-agent: bislamic  # requerido por la API de GitHub
+
+skipDeleteIssues: true  # guarda historial aunque el outage dure menos de 15 min
 
 sites:
   - name: Bislamic
     url: https://www.bislamic.com
+    icon: https://www.bislamic.com/cdn/shop/files/bi-logo-512x512-black-BGwhite-radius-115.png
+    maxResponseTime: 3000
 
   - name: Bislamic Deen (Blog)
     url: https://deen.bislamic.com
+    icon: https://deen.bislamic.com/content/images/size/w256h256/2025/05/bi-logo-1024x1024-black-50--BGwhite-circle.png
+    maxResponseTime: 3000
 
   - name: islamic.app
     url: https://islamic.app
+    icon: https://islamic.app/favicon.ico
+    maxResponseTime: 2000
 
   - name: API islamic.app
     url: https://api.islamic.app/health
+    icon: https://islamic.app/favicon.ico
+    slug: api-islamic-app
+    maxResponseTime: 1500
+    __dangerous__body_down_if_text_missing: '"status"'  # ajusta al key real de tu /health
 
   - name: CDN islamic.app
     url: https://cdn.islamic.app/health
+    icon: https://islamic.app/favicon.ico
+    slug: cdn-islamic-app
+    maxResponseTime: 1500
 
   - name: deen.social
     url: https://deen.social/api/v1/instance
+    slug: deen-social
+    maxResponseTime: 4000
 
   - name: deen.social (Files)
     url: https://files.deen.social/media-healthcheck.png
+    slug: deen-social-files
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
 
   - name: deen.social (Streaming)
     url: https://streaming.deen.social/api/v1/streaming/health
+    slug: deen-social-streaming
+    maxResponseTime: 3000
 
 status-website:
   cname: status.bislamic.com
   name: Bislamic Status
   description: Estado de los servicios del ecosistema de Bislamic
   theme: dark
+  logoUrl: https://www.bislamic.com/favicon.ico
+  favicon: https://www.bislamic.com/favicon.ico
+  introTitle: "Estado de los servicios de **Bislamic**"
+  introMessage: Monitorización en tiempo real de bislamic.com, islamic.app y deen.social.
   navbar:
     - title: Bislamic
       href: https://www.bislamic.com
@@ -41,6 +70,21 @@ status-website:
       href: https://islamic.app
     - title: deen.social
       href: https://deen.social
+
+i18n:
+  activeIncidents: Incidentes activos
+  allSystemsOperational: Todos los sistemas operativos
+  incidentReport: Informe de incidente
+  incidentFixed: Incidente resuelto
+  incidentFixedAt: Resuelto el
+  responseTime: Tiempo de respuesta
+  responseTimeGraphAlt: Gráfico de tiempo de respuesta
+  liveStatus: Estado en vivo
+  overallUptime: Disponibilidad total
+  currentStatus: Estado actual
+  up: Operativo
+  down: Caído
+  degraded: Degradado
 
 assignees:
   - bislamic
